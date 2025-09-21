@@ -14,9 +14,12 @@ body {
 nav {
   background: #2E2E2E;
   padding: 15px 30px;
-  border-radius: 15px;
-  margin: 20px; /* edges not touching screen */
-  position:relative;
+  border-radius: 20px;
+  position: absolute;
+  top: 15px;        
+  left: 20px;      
+  right: 20px;   
+  z-index: 10;
 }
 
 .nav-container {
