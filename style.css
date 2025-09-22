@@ -265,6 +265,109 @@ nav {
   white-space: nowrap;
   cursor: pointer;
 }
+
+.site-footer {
+  background-color: #4682B4; /* your blue */
+  color: #fff;
+  padding: 40px 20px 20px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Top part of footer */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Logo */
+.footer-logo img {
+  width: 150px;
+  height: auto;
+  border: 2px solid #fff; /* white border */
+  border-radius: 0px; /* slightly rounded corners, optional */
+  padding: 5px; /* optional spacing between logo and border */
+  background-color: #4682B4; /* ensures border stands out */
+}
+
+/* Columns */
+.footer-column {
+  flex: 1;
+  min-width: 180px;
+}
+
+/* Column headings */
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+/* Wayfinding links */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #ccc; /* gray on hover */
+}
+
+/* Info list (address and contact info) */
+.info-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.info-list .icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+/* Address styling */
+.footer-column p {
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Footer bottom line */
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  padding-top: 10px;
+  max-width: 600px; /* slim line width */
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* Responsive adjustments */
+@media(max-width: 900px){
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .footer-column {
+    text-align: center;
+  }
+}
   
 
 /* SLOGAN ANIMATION PROFESSIONAL */
