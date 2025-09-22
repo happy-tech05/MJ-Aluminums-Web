@@ -129,6 +129,72 @@ nav {
   max-width: 500px;
 }
 
+.service {
+  display: flex;
+  justify-content: center; /* pushes text left, image right */
+  align-items: center;            /* vertically center */
+  padding: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 1.5rem; 
+  
+}
+
+.service-logo img {
+  height: 60px; /* adjust size as needed */
+  width: auto;
+}
+
+.service-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 40px 60px; /* ensures containers don’t touch screen edges */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.service-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.service-card hr {
+  width: 60%;
+  margin: 10px auto;
+  border: none;
+  border-top: 2px solid #ddd;
+}
+
+.service-card a {
+  display: inline-block;
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+.service-card a:hover {
+  color: #007BFF; /* blue hover */
+}
+  
+
 /* SLOGAN ANIMATION PROFESSIONAL */
 @keyframes sloganFade {
   0%, 20%, 100% { opacity: 0; transform: translateY(0px); }
