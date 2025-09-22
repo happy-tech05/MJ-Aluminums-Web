@@ -191,7 +191,79 @@ nav {
 }
 
 .service-card a:hover {
-  color: #007BFF; /* blue hover */
+  color: #007BFF; 
+}
+
+.free-quote {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+
+.free-quote .section-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #333;
+  white-space: nowrap;
+}
+
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: nowrap; 
+}
+
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  text-align: center;
+  width: 220px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  word-wrap: break-word; 
+}
+
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h2 {
+  font-size: 16px; 
+  margin-bottom: 15px;
+  line-height: 1.3;
+  white-space: normal; 
+}
+
+
+.card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+
+.card img:hover {
+  transform: scale(1.1);
+}
+
+
+.card h3 {
+  font-size: 16px;
+  color: #007BFF;
+  margin-top: 0;
+  white-space: nowrap;
+  cursor: pointer;
 }
   
 
