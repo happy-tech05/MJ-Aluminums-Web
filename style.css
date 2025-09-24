@@ -640,3 +640,98 @@ margin-bottom: 10px;
     height: 140px;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .service-content {
+    grid-template-columns: 1fr; /* single column */
+    padding: 20px;
+  }
+  .service {
+    font-size: 2rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* Free quote cards - stack instead of row */
+@media screen and (max-width: 800px) {
+  .cards-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  .card {
+    width: 100%;
+    max-width: 300px; /* prevent stretching too wide */
+  }
+}
+
+/* Products section - stack images and text */
+@media screen and (max-width: 768px) {
+  .aluminium-products {
+    flex-direction: column !important; /* stack vertically */
+    text-align: center;
+  }
+  .separator {
+    display: none; /* hide blue line on small screens */
+  }
+  .images {
+    flex-direction: row; /* put pictures side by side on mobile */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .images img {
+    width: 45%;  /* take half width */
+    height: auto;
+  }
+  .text {
+    padding: 10px;
+  }
+}
+
+/* Gallery - smaller images on phones */
+@media screen and (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    padding: 20px;
+  }
+  .gallery img {
+    height: 120px;
+  }
+}
+
+/* Contact form & map - full width on phones */
+@media screen and (max-width: 700px) {
+  .map-container,
+  .contact-container,
+  .contact-form {
+    padding: 15px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    display: block;
+    padding: 10px 0;
+  }
+}
