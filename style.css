@@ -510,7 +510,84 @@ nav {
   transform: scale(1.05);
 }
 
+.products {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
 
+.aluminium-products {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  margin-bottom: 60px;
+  gap: 20px;
+}
+
+.aluminium-products.layout-left {
+  flex-direction: row; /* pictures left, text right */
+}
+
+.aluminium-products.layout-right {
+  flex-direction: row-reverse; /* pictures right, text left */
+}
+
+.images {
+  display: flex;
+  flex-direction: column; /* stack pictures vertically */
+  gap: 15px;
+  flex: 1;
+}
+
+.images img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.separator {
+  width: 4px;
+  background-color: #007BFF; /* blue border */
+  margin: 0 20px;
+}
+
+.text {
+  flex: 1;
+  padding: 20px;
+}
+
+.text h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.text ul li {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.last-services {
+  margin: 0% auto;
+  text-align: center;
+  
+}
+
+.last-services img {
+  width: 150px;
+  height: auto;
+  
+}
+
+.last-services ul {
+font-size: 20px;
+line-height: 2;
+font-weight: bolder;
+margin-bottom: 10px;
+}
 
 @media(max-width: 900px){
   .footer-top {
