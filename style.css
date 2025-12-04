@@ -9,16 +9,15 @@ body {
   background-color: #f5f5f5;
   color: #333;
 }
-
-
+/* MAIN NAVBAR */
 nav {
   background: #2E2E2E;
   padding: 15px 30px;
   border-radius: 20px;
   position: absolute;
-  top: 15px;        
-  left: 20px;      
-  right: 20px;   
+  top: 15px;
+  left: 20px;
+  right: 20px;
   z-index: 10;
 }
 
@@ -28,6 +27,7 @@ nav {
   align-items: center;
 }
 
+/* LOGO */
 .nav-logo {
   display: flex;
   align-items: center;
@@ -38,35 +38,92 @@ nav {
 
 .nav-logo img {
   height: 50px;
-  width:50px;
+  width: 50px;
   margin-right: 10px;
 }
 
+/* NAV LINKS FOR DESKTOP */
 .nav-links {
   display: flex;
   gap: 20px;
   list-style: none;
 }
 
+/* THIS PAD + HOVER MUST MATCH MOBILE EXACTLY */
 .nav-links li a {
   text-decoration: none;
   color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  padding: 12px 20px;  
+  border-radius: 10px;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-/* CONTACT BUTTON STYLE */
-.nav-links li.contact a {
-  border: 2px solid #4682B4;
-  border-radius: 12px;
-}
-
-/* HOVER EFFECT */
 .nav-links li a:hover {
   background-color: #4682B4;
-  color: white;
+  color: #fff;
+}
+
+/* Contact button border */
+.nav-links li.contact a {
+  border: 2px solid #4682B4;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: #4682B4;
+  cursor: pointer;
+}
+
+/* -------------- MOBILE ONLY -------------- */
+@media (max-width: 768px) {
+
+  /* Hide logo */
+  .nav-logo {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* MOBILE DROPDOWN MENU aligned with navbar edges */
+  .nav-links {
+    flex-direction: column;
+    background: #2E2E2E;
+    border-radius: 15px;
+
+    position: absolute;
+    top: calc(100% + 10px);
+
+    /* Start at the left of the navbar and same width */
+    left: 0;
+    right: 0;
+    padding: 0 30px; /* same as nav padding */
+    box-sizing: border-box;
+
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .nav-links.active {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 0;
+  }
+
+  /* MOBILE LINKS fill width of dropdown container */
+  .nav-links li a {
+    width: 100%;
+    text-align: center;
+    padding: 12px 0; 
+  }
 }
 
 /* HERO SECTION */
