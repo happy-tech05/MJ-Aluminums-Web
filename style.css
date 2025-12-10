@@ -1,3 +1,6 @@
+/* =========================
+   GLOBAL RESET & BASE STYLES
+   ========================= */
 * {
   margin: 0;
   padding: 0;
@@ -5,83 +8,161 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f5f5;
   color: #333;
+  scroll-behavior: smooth;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-
+/* =========================
+   NAVIGATION
+   ========================= */
 nav {
-  background: #2E2E2E;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   padding: 15px 30px;
   border-radius: 20px;
-  position: absolute;
-  top: 15px;        
-  left: 20px;      
-  right: 20px;   
+  position: fixed;
+  top: 15px;
+  left: 20px;
+  right: 20px;
   z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+nav.scrolled {
+  transform: scale(0.97);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .nav-logo {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
-  font-weight: bold;
-  color: #4682B4;
+  font-weight: 700;
+  color: black;
 }
 
 .nav-logo img {
+  width: 50px;
   height: 50px;
-  width:50px;
   margin-right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.nav-logo img:hover {
+  transform: rotate(15deg);
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   list-style: none;
+  flex-wrap: wrap;
+  transition: all 0.3s ease;
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: white;
-  padding: 8px 15px;
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  color: black;
   font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* CONTACT BUTTON STYLE */
+.nav-links li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: black;
+  transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
 .nav-links li.contact a {
-  border: 2px solid #4682B4;
+  padding: 8px 15px;
+  border: 1px solid black;
   border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-/* HOVER EFFECT */
-.nav-links li a:hover {
-  background-color: #4682B4;
+.nav-links li.contact a:hover {
+  background: black;
   color: white;
+  transform: scale(1.05);
 }
 
-/* HERO SECTION */
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 11;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: black;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 15px;
+  margin-top: 10px;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* =========================
+   HERO SECTION
+   ========================= */
 .hero {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: url('images/chatgpt photho.png') center center / cover no-repeat fixed;
+  background: url("images/chatgpt photho.png") center center / cover no-repeat
+    fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
 
-/* OVERLAY */
 .hero::before {
   content: "";
   position: absolute;
@@ -89,29 +170,28 @@ nav {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55); /* stronger semi-transparent overlay */
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
 
-/* HERO CONTENT */
 .hero-content {
   position: relative;
-  z-index: 2; /* keeps text and logo above overlay */
+  z-index: 2;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 90%;
   max-width: 1300px;
+  animation: fadeInUp 1s ease forwards;
 }
 
-
-/* HERO TEXT */
 .hero-text h1 {
   font-size: 6rem;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 25px;
   line-height: 1.1;
-  text-shadow: 3px 3px 12px rgba(0,0,0,0.6);
+  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.6);
+  animation: slideInLeft 1s ease forwards;
 }
 
 .hero-text .slogan {
@@ -121,9 +201,17 @@ nav {
   animation: sloganFade 5s ease-in-out infinite;
 }
 
+.hero-logo img {
+  border: white solid;
+  height: 450px;
+  width: auto;
+  max-width: 500px;
+  animation: fadeIn 1.5s ease forwards;
+}
+
 /* HERO LOGO */
 .hero-logo img {
-  border:white solid ;
+  border: white solid;
   height: 450px;
   width: auto;
   max-width: 500px;
@@ -132,12 +220,11 @@ nav {
 .service {
   display: flex;
   justify-content: center; /* pushes text left, image right */
-  align-items: center;            /* vertically center */
+  align-items: center; /* vertically center */
   padding: 20px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 3.5rem;
-  letter-spacing: 1.5rem; 
-  
+  letter-spacing: 1.5rem;
 }
 
 .service-logo img {
@@ -150,13 +237,13 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   padding: 40px 60px; /* ensures containers don’t touch screen edges */
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 .service-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -164,7 +251,7 @@ nav {
 
 .service-card:hover {
   transform: translateY(-10px) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .service-card img {
@@ -191,14 +278,13 @@ nav {
 }
 
 .service-card a:hover {
-  color: #007BFF; 
+  color: #007bff;
 }
 
 .free-quote {
   padding: 40px 20px;
   text-align: center;
 }
-
 
 .free-quote .section-title {
   font-size: 28px;
@@ -207,41 +293,37 @@ nav {
   white-space: nowrap;
 }
 
-
 .cards-container {
   display: flex;
   justify-content: center;
   gap: 30px;
-  flex-wrap: nowrap; 
+  flex-wrap: nowrap;
 }
-
 
 .card {
   background-color: #f9f9f9;
   border-radius: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   padding: 20px;
   text-align: center;
-  width: 220px; 
+  width: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
-  word-wrap: break-word; 
+  word-wrap: break-word;
 }
-
 
 .card:hover {
   transform: translateY(-10px);
 }
 
 .card h2 {
-  font-size: 16px; 
+  font-size: 16px;
   margin-bottom: 15px;
   line-height: 1.3;
-  white-space: normal; 
+  white-space: normal;
 }
-
 
 .card img {
   width: 150px;
@@ -252,22 +334,20 @@ nav {
   transition: transform 0.3s ease;
 }
 
-
 .card img:hover {
   transform: scale(1.1);
 }
 
-
 .card h3 {
   font-size: 16px;
-  color: #007BFF;
+  color: #007bff;
   margin-top: 0;
   white-space: nowrap;
   cursor: pointer;
 }
 
 .site-footer {
-  background-color: #4682B4; /* your blue */
+  background-color: #4682b4; /* your blue */
   color: #fff;
   padding: 40px 20px 20px 20px;
   font-family: Arial, sans-serif;
@@ -288,7 +368,7 @@ nav {
   border: 2px solid #fff; /* white border */
   border-radius: 0px; /* slightly rounded corners, optional */
   padding: 5px; /* optional spacing between logo and border */
-  background-color: #4682B4; /* ensures border stands out */
+  background-color: #4682b4; /* ensures border stands out */
 }
 
 /* Columns */
@@ -347,7 +427,7 @@ nav {
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
-  border-top: 1px solid rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
   padding-top: 10px;
   max-width: 600px; /* slim line width */
   margin-left: auto;
@@ -357,23 +437,23 @@ nav {
 }
 
 .about-section {
-  max-width: 1000px;   /* keeps the content centered and away from edges */
-  margin: 0 auto;     /* centers the section horizontally */
-  padding: 20px;      /* adds breathing space inside */
+  max-width: 1000px; /* keeps the content centered and away from edges */
+  margin: 0 auto; /* centers the section horizontally */
+  padding: 20px; /* adds breathing space inside */
 }
 
 .about-section h2 {
   text-align: center; /* centers the heading */
   margin-bottom: 20px;
   font-size: 2rem;
-  color: #333;        /* you can change this */
+  color: #333; /* you can change this */
 }
 
 .about-info {
-  background: #f9f9f9;  /* light background to make it stand out */
+  background: #f9f9f9; /* light background to make it stand out */
   padding: 20px;
-  border-radius: 10px;  /* rounded corners */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* subtle shadow */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
 .about-info p {
@@ -397,7 +477,7 @@ nav {
   max-width: 1000px;
   margin: 0 auto 50px auto; /* center + space before footer */
   padding: 20px;
-  border: 2px solid #4682B4; /* blue border */
+  border: 2px solid #4682b4; /* blue border */
   border-radius: 10px; /* optional rounded corners */
 }
 
@@ -405,7 +485,6 @@ nav {
   width: 100%;
   height: 350px;
   border-radius: 8px; /* optional smooth edges */
-  
 }
 
 .contact-section {
@@ -417,7 +496,7 @@ nav {
   max-width: 1000px;
   margin: 0 auto 30px auto;
   padding: 20px;
-  border: 2px solid #4682B4;
+  border: 2px solid #4682b4;
   border-radius: 10px;
 }
 
@@ -435,9 +514,8 @@ nav {
 
 .contact-container i {
   margin-right: 8px;
-  color: #4682B4;
+  color: #4682b4;
 }
-
 
 .contact-form {
   max-width: 1000px;
@@ -462,7 +540,7 @@ nav {
 }
 
 .contact-form button {
-  background-color: #4682B4;
+  background-color: #4682b4;
   color: #fff;
   padding: 12px;
   border: none;
@@ -478,7 +556,7 @@ nav {
 
 .gallery-section {
   position: relative;
-  background:#cecdcd;
+  background: #cecdcd;
   min-height: 100vh;
 }
 
@@ -487,23 +565,21 @@ nav {
   padding-top: 10px;
 }
 
-
 .gallery {
   position: relative;
-  z-index: 1; 
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   gap: 15px;
   padding: 40px;
 }
 
-
 .gallery img {
   width: 100%;
-  height: 180px; 
+  height: 180px;
   object-fit: cover;
-  border: 3px solid #4682B4; 
-  border-radius: 0; 
+  border: 3px solid #4682b4;
+  border-radius: 0;
   transition: transform 0.3s ease;
 }
 
@@ -545,12 +621,12 @@ nav {
   height: 160px;
   object-fit: cover;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .separator {
   width: 4px;
-  background-color: #007BFF; /* blue border */
+  background-color: #007bff; /* blue border */
   margin: 0 20px;
 }
 
@@ -574,23 +650,21 @@ nav {
 .last-services {
   margin: 0% auto;
   text-align: center;
-  
 }
 
 .last-services img {
   width: 150px;
   height: auto;
-  
 }
 
 .last-services ul {
-font-size: 20px;
-line-height: 2;
-font-weight: bolder;
-margin-bottom: 10px;
+  font-size: 20px;
+  line-height: 2;
+  font-weight: bolder;
+  margin-bottom: 10px;
 }
 
-@media(max-width: 900px){
+@media (max-width: 900px) {
   .footer-top {
     flex-direction: column;
     align-items: center;
@@ -601,15 +675,24 @@ margin-bottom: 10px;
     text-align: center;
   }
 }
-  
-
 
 @keyframes sloganFade {
-  0%, 20%, 100% { opacity: 0; transform: translateY(0px); }
-  40%, 60% { opacity: 1; transform: translateY(-5px); }
-  80% { opacity: 0.7; transform: translateY(-2px); }
+  0%,
+  20%,
+  100% {
+    opacity: 0;
+    transform: translateY(0px);
+  }
+  40%,
+  60% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+  80% {
+    opacity: 0.7;
+    transform: translateY(-2px);
+  }
 }
-
 
 @media screen and (max-width: 1000px) {
   .hero-content {
@@ -684,7 +767,7 @@ margin-bottom: 10px;
     justify-content: center;
   }
   .images img {
-    width: 45%;  /* take half width */
+    width: 45%; /* take half width */
     height: auto;
   }
   .text {
