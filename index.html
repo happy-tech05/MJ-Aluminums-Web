@@ -1,14 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<<<<<<< HEAD
-  <body>
-<nav>
-  <div class="nav-container">
-    <div class="nav-logo">
-      <img src="./images/colored-logo.png" alt="logo">
-      M.J Aluminiums
-=======
+<html lang="e">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,16 +22,6 @@
         <span></span>
       </div>
 
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="LandingPage/gallery.html">Gallery</a></li>
-        <li><a href="LandingPage/about-us.html">About Us</a></li>
-        <li class="contact"><a href="LandingPage/contact-us.html">Contact Us</a></li>
-      </ul>
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
-    </div>
-
-    
     <div class="menu-toggle" id="menu-toggle">
       ☰
     </div>
@@ -76,31 +57,31 @@
 
   <section class="service-content">
     <div class="service-card">
-      <img src="images/alu.png">
+      <img src="images/alumi.jpeg">
       <hr>
       <a href="LandingPage/services.html#products">ALUMINIUM PRODUCTS</a>
     </div>
 
     <div class="service-card">
-      <img src="images/garaged.png">
+      <img src="images/p50.jpg">
       <hr>
       <a href="LandingPage/services.html#product">GARAGE DOORS</a>
     </div>
 
     <div class="service-card">
-      <img src="images/shower.png">
+      <img src="images/Shw.jpg">
       <hr>
       <a href="LandingPage/services.html#products">SHOWER CLASSES</a>
     </div>
 
     <div class="service-card">
-      <img src="images/paving.png">
+      <img src="images/pav.jpeg">
       <hr>
       <a href="LandingPage/services.html#products">PAVING</a>
     </div>
 
     <div class="service-card">
-      <img src="images/pool.png">
+      <img src="images/swimming pool.jpeg">
       <hr>
       <a href="LandingPage/services.html#products">SWIMMING POOLS</a>
     </div>
@@ -112,27 +93,23 @@
     </div>
 
     <div class="service-card">
-      <img src="images/kitchen.png">
+      <img src="images/p18.jpg">
       <hr>
       <a href="LandingPage/services.html#products">KITCHEN UNITS</a>
     </div>
 
-<<<<<<< HEAD
-<script src="javascript.js"></script>
-=======
     <div class="service-card">
-      <img src="images/TV.png">
+      <img src="images/p36.jpg">
       <hr>
-      <a href="LandingPage/services.html#products">TV STANDS</a>
+      <a href="LandingPage/services.html#products">TRELLIS / ALUGLIDE / BURGLARS</a>
     </div>
 
     <div class="service-card">
-      <img src="images/Interior.png">
+      <img src="images/p37.jpg">
       <hr>
-      <a href="LandingPage/services.html#products">INTERIOR DESIGN</a>
+      <a href="LandingPage/services.html#products">BALUSTRADE</a>
     </div>
   </section>
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
 
   <section class="free-quote">
     <h2 class="section-title">You are welcome to:</h2>
@@ -192,58 +169,13 @@
     <div class="footer-bottom">
       <p>Website developed by Happy Tech | ramaphokohappy@gmail.com</p>
     </div>
+
   </footer>
 
-  <script>
-    // Simple, robust menu toggle + accessible state + auto-close on link click
-    const hamburger = document.querySelector(".hamburger");
-    const navLinks = document.querySelector(".nav-links");
-    const nav = document.querySelector(".site-nav");
+<script src="javascript.js"></script>
 
-    if (hamburger && navLinks) {
-      function setMenu(open) {
-        const expanded = Boolean(open);
-        hamburger.setAttribute("aria-expanded", expanded);
-        if (expanded) {
-          navLinks.classList.add("open");
-          hamburger.classList.add("active");
-          navLinks.dataset.state = "open";
-        } else {
-          navLinks.classList.remove("open");
-          hamburger.classList.remove("active");
-          navLinks.dataset.state = "closed";
-        }
-      }
-
-      hamburger.addEventListener("click", () => {
-        setMenu(navLinks.dataset.state !== "open");
-      });
-
-      // close when clicking a link
-      navLinks.addEventListener("click", (e) => {
-        if (e.target.matches("a")) setMenu(false);
-      });
-
-      // close on escape
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") setMenu(false);
-      });
-
-      // optional: shrink nav slightly on scroll for nicer UX
-      let lastScroll = 0;
-      window.addEventListener("scroll", () => {
-        const cur = window.scrollY;
-        if (cur > 20) nav.classList.add("scrolled");
-        else nav.classList.remove("scrolled");
-        lastScroll = cur;
-      }, { passive: true });
-    }
-
-  </script>
 </body>
-<<<<<<< HEAD
 </html>
-=======
 
-</html>
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
+
+

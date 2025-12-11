@@ -12,39 +12,29 @@ body {
   background-color: #f5f5f5;
   color: #333;
   scroll-behavior: smooth;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition:  0.3s ease, color 0.3s ease;
 }
-<<<<<<< HEAD
+
 /* MAIN NAVBAR */
-=======
 
 /* =========================
    NAVIGATION
    ========================= */
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
 nav {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(30, 29, 29, 0.906);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   padding: 15px 30px;
   border-radius: 20px;
-<<<<<<< HEAD
   position: absolute;
-=======
-  position: fixed;
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
   top: 15px;
   left: 20px;
   right: 20px;
   z-index: 10;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  transition: background 0.3s ease, transform 0.3s ease;
+  border: 1px solid rgba(30, 29, 29, 0.906);
+  transition: 0.3s ease, transform 0.3s ease;
 }
 
-nav.scrolled {
-  transform: scale(0.97);
-  background: rgba(255, 255, 255, 0.25);
-}
 
 .nav-container {
   display: flex;
@@ -59,16 +49,13 @@ nav.scrolled {
   align-items: center;
   font-size: 1.5rem;
   font-weight: 700;
-  color: black;
+  color: #4682B4;
 }
 
 .nav-logo img {
   width: 50px;
   height: 50px;
-<<<<<<< HEAD
   width: 50px;
-=======
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
   margin-right: 10px;
   transition: transform 0.3s ease;
 }
@@ -89,7 +76,6 @@ nav.scrolled {
 /* THIS PAD + HOVER MUST MATCH MOBILE EXACTLY */
 .nav-links li a {
   text-decoration: none;
-<<<<<<< HEAD
   color: white;
   padding: 12px 20px;  
   border-radius: 10px;
@@ -133,21 +119,18 @@ nav.scrolled {
     flex-direction: column;
     background: #2E2E2E;
     border-radius: 15px;
-
     position: absolute;
     top: calc(100% + 10px);
-
     /* Start at the left of the navbar and same width */
     left: 0;
     right: 0;
     padding: 0 30px; /* same as nav padding */
     box-sizing: border-box;
-
     overflow: hidden;
     max-height: 0;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px #4682B4;
   }
 
   .nav-links.active {
@@ -162,23 +145,7 @@ nav.scrolled {
     text-align: center;
     padding: 12px 0; 
   }
-=======
-  color: black;
-  font-weight: 500;
-  padding: 8px 0;
-  position: relative;
-  transition: color 0.3s ease;
-}
 
-.nav-links li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 0;
-  height: 2px;
-  background: black;
-  transition: width 0.3s ease;
 }
 
 .nav-links li a:hover::after {
@@ -187,16 +154,15 @@ nav.scrolled {
 
 .nav-links li.contact a {
   padding: 8px 15px;
-  border: 1px solid black;
+  border: 1px solid #4682B4;
   border-radius: 12px;
   transition: all 0.3s ease;
 }
 
 .nav-links li.contact a:hover {
-  background: black;
+  background: #4682B4;
   color: white;
-  transform: scale(1.05);
->>>>>>> 9579a4235b5385d14fb633a29c0ff72d8ebcb82f
+
 }
 
 /* HAMBURGER */
